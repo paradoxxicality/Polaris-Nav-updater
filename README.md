@@ -13,5 +13,7 @@ This code is licensed under the GNU LGPLv3. It only permits modifications or enh
 | Feature  | Status |
 | ------------- | ------------- |
 | Check Plugin Version  | ❌ |
-| Download and Update  | ❌ |
+| Download and Update Plugin | ❌ |
+| Check Updater Version | ❌ |
+| Download and Update Updater | ❌ |
 | Run in the backround on startup  | ❌ |
