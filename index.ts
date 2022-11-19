@@ -1,5 +1,6 @@
 // Imports | Requires \\
 import os from 'node:os'; import fs from 'fs'; import DOMParser from 'xmldom'; import {select} from 'xpath'
+import { json } from 'stream/consumers';
 const xpath = require('xpath')
 
 // Variables \\
@@ -10,23 +11,23 @@ console.log(tempDir)
 
 // Functions
 
-function findPluginFile(dir : string) {
-    fs.readdir(dir, function (err, foundFiles : any) {
+async function getPluginVer(plugDir : string) {
+    fs.readdir(plugDir, function (err, foundFiles : any) {
         if (err) {
           console.log(err);
           return;
         }
         for (let i = 0; i < foundFiles.length; i++) {
             console.log(i)
-            var foundFile : string = foundFiles[i]
+            var foundFile : any  = foundFiles[i]
             if (foundFile.endsWith(".rbxmx")) {
                 var dp1 = new DOMParser.DOMParser
                 var doc = dp1.parseFromString(fs.readFileSync(pluginFolder + '\\' + foundFile, 'utf8'))
                 var nodes = select("//Item/Item/Item/Properties/string", doc)
                 for (let l = 0; l < nodes.length; l++) {
                     var currentNode = nodes[l]
-                    if (currentNode.toString() == '<string name="Value">0.0.1-beta</string>') {
-                        console.log(currentNode)
+                    if (currentNode.toString().startsWith('<string name="Value">') && currentNode.toString().endsWith('</string>') ) {
+                        return currentNode.toString().split('>')[1].split('</')[0].toString()
                     }
                 }
             }
@@ -34,6 +35,4 @@ function findPluginFile(dir : string) {
     });
 }
 
-
-findPluginFile(pluginFolder)
 
