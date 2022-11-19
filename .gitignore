@@ -1,4 +1,4 @@
 node_modules/
 temp/
-.json
-.ts
+*.json
+*.ts
