@@ -1,0 +1,24 @@
+{
+  "name": "polaris-nav-updater",
+  "version": "0.0.1",
+  "description": "Unofficial update tool for Polaris-Nav.",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "nodemon index.ts"
+  },
+  "author": "ExplXit",
+  "license": "GNU LGPLv3",
+  "dependencies": {
+    "@types/node": "^18.11.9",
+    "binary-xml": "^0.0.1",
+    "fetch": "^1.1.0",
+    "fs": "^0.0.1-security",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "xmldom": "^0.6.0",
+    "xpath": "^0.0.32"
+  },
+  "devDependencies": {
+    "@types/xmldom": "^0.1.31"
+  }
+}
