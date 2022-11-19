@@ -1,1 +1,4 @@
-*.json *.ts
+node_modules/
+temp/
+.json
+.ts
