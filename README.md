@@ -1,3 +1,6 @@
+# THIS REPO IS DEAD.
+the owner of polaris hasnt really been responding to me anymore, so uhh. This project is dead.
+
 # Polaris-Nav Update Tool
 This is an unofficial update tool for Polaris-Nav
 
